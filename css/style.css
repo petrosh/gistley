@@ -1,7 +1,11 @@
 html {
   overflow-y: scroll; }
 
-section {
+header {
+  background: rgba(0, 0, 0, 0.5); }
+
+section,
+body > header {
   margin: auto;
   width: 85%; }
 
