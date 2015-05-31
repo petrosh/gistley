@@ -1,3 +1,6 @@
+Filename: gamma-php-url-fix-encode.php
+Description: php accented url fix
+
 https://github.com/coreyti/showdown
 
 https://github.com/cobyism/gridism
