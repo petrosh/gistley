@@ -1,0 +1,25 @@
+section {
+  margin: auto;
+  width: 85%;
+}
+
+a {
+  &, &:link, &:visited {
+    color: blue;
+  }
+  &:hover {
+    color: red;
+  }
+  &:active {
+    color: white;
+  }
+}
+
+header {
+  h3 {
+    text-transform: capitalize;
+  }
+  p {
+    font-weight: bold;
+  }
+}

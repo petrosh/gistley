@@ -9,55 +9,58 @@
 
         <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/gridism.css">
         <link rel="stylesheet" href="css/highlight.css">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/style.css">
     </head>
-    <body class="wrap">
-        <div class="grid">
-            <div class="unit whole center-on-mobiles">
-                <h1 class="title"><a href="index.html">gistley</a></h1>
-            </div>
-        </div>
-        <div class="grid">
-            <div class="unit whole" id="maingist"></div>
-        </div>
-        <div class="grid">
-            <div class="unit whole center-on-mobiles">
-                <div id="gistlist"></div>
-            </div>
-        </div>
-        <script type="text/x-handlebars-template" id="tmplgistlist">
-            {{#each .}}
-            <div class="gist-item">
-                <h3><a href="?{{id}}">{{description}}</a></h3>
-                <p>
-                    {{#each taglist}}
-                        {{this}}{{#unless @last}}, {{/unless}}
-                    {{else}}{{/each}}
-                </p>
-                <small>{{real_time}}</small>
-            </div>
-            {{/each}}
-        </script>
-        <script type="text/x-handlebars-template" id="tmplmaingist">
+    <body>
+
+      <header>
+        <h1><a href="index.html">gistley</a></h1>
+      </header>
+
+      <section id="maingist">
+      </section>
+
+      <section id="gistlist">
+      </section>
+
+      <script type="text/x-handlebars-template" id="tmplgistlist">
+        {{#each .}}
+        <article>
+          <header>
+            <h3><a href="?{{id}}">{{description}}</a></h3>
+            <p>TAGS:
+              {{#each taglist}}
+                {{this}}{{#unless @last}}, {{/unless}}
+              {{else}}{{/each}}
+            </p>
+            <small>TIME: {{real_time}}</small>
+          </header>
+        </article>
+        {{/each}}
+      </script>
+
+      <script type="text/x-handlebars-template" id="tmplmaingist">
+        <article>
+          <header>
             <h2>{{description}}</h2>
             <p>
                 {{#each taglist}}
                     {{this}}{{#unless @last}}, {{/unless}}
                 {{else}}{{/each}}
             </p>
-            <small>{{real_time}}</small>
-            {{#contents}}
-                {{{content}}}
-            {{/contents}}
-            <a href="{{html_url}}">html_url</a>
-        </script>
-        <script src="js/jquery.min.js"></script>
-        <script src="js/showdown.js"></script>
-        <script src="js/highlight.js"></script>
-        <script src="js/handlebars-v1.3.0.js"></script>
-        <script src="js/main.js"></script>
+            <small>TIME: {{real_time}}, LINK: <a href="{{html_url}}">html_url</a></small>
+          </header>
+          {{#contents}}
+              {{{content}}}
+          {{/contents}}
+        </article>
+      </script>
+
+      <script src="js/jquery.min.js"></script>
+      <script src="js/showdown.js"></script>
+      <script src="js/highlight.js"></script>
+      <script src="js/handlebars-v1.3.0.js"></script>
+      <script src="js/main.js"></script>
     </body>
 </html>

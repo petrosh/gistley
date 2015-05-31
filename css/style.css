@@ -1,0 +1,17 @@
+section {
+  margin: auto;
+  width: 85%; }
+
+a, a:link, a:visited {
+  color: blue; }
+a:hover {
+  color: red; }
+a:active {
+  color: white; }
+
+header h3 {
+  text-transform: capitalize; }
+header p {
+  font-weight: bold; }
+
+/*# sourceMappingURL=style.css.map */
